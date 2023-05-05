@@ -1,15 +1,15 @@
 .menu {
     position: absolute;
     display: flex;
-    width: 95vw;
-    padding: 2.5vh 2.5vw;
+    width: 90vw;
+    padding: 2.5vh 5vw;
     justify-content: space-between;
 }
 .logoBox {
 
 }
 .logo {
-    width: 300px;
+    width: 50vw;
     height: auto;
 }
 .nav {
@@ -21,4 +21,26 @@
 a.navLink {
     text-decoration: none;
     color: black;
+}
+
+@media screen and (min-width: 768px) {
+    .menu {
+        width: 95vw;
+        padding: 2.5vh 2.5vw;
+    }
+    .logoBox {
+    
+    }
+    .logo {
+        width: 30vw;
+        height: auto;
+    }
+    .nav {
+    
+    }
+    .navItem {
+    
+    }
+    a.navLink {
+    }
 }
