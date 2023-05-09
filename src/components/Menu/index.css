@@ -1,12 +1,14 @@
 .menu {
-    position: absolute;
+    position: fixed;
     display: flex;
     width: 90vw;
-    padding: 2.5vh 5vw;
+    padding: 5vw;
     justify-content: space-between;
+    z-index: 10;
+    pointer-events: none;
 }
 .logoBox {
-
+    
 }
 .logo {
     width: 50vw;
@@ -26,7 +28,8 @@ a.navLink {
 @media screen and (min-width: 768px) {
     .menu {
         width: 95vw;
-        padding: 2.5vh 2.5vw;
+        padding: 2.5vw;
+        justify-content: space-between;
     }
     .logoBox {
     
