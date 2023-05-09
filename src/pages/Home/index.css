@@ -1,7 +1,12 @@
 .home {
     width: 100vw;
-    height: 80vh;
+    height: 100vh;
     display: flex;
+    position: absolute;
+    z-index: 1;
+}
+.imageContainer {
+    height: 80vh;
 }
 .homeImage {
     width: 100vw;
@@ -25,7 +30,10 @@
 
 @media screen and (min-width: 768px) {
     .home {
-        width: 75vw;
+        width: 100vw;
+        height: 100vh;
+    }
+    .imageContainer {
         height: 100vh;
     }
     .homeImage {
