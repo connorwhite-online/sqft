@@ -7,7 +7,7 @@ export default function Store() {
         <div className='store'>
             <div className='webgl'>
                 <Canvas >
-                    {/* <OrbitControls /> */}
+                    <OrbitControls />
                     {/* <ambientLight /> */}
                     <pointLight position={[10, 10, -3]} intensity={.5}/>
                     <pointLight position={[5, -5, 3]} intensity={.5} />
