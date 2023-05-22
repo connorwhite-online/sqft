@@ -2,10 +2,10 @@
     position: fixed;
     display: flex;
     width: 90vw;
+    height: auto;
     padding: 5vw;
     justify-content: space-between;
     z-index: 10;
-    pointer-events: none;
 }
 .logoBox {
     
@@ -15,7 +15,7 @@
     height: auto;
 }
 .nav {
-
+    clip-path: inset(0);
 }
 .navItem {
 
@@ -23,6 +23,8 @@
 a.navLink {
     text-decoration: none;
     color: black;
+    font-family: 'Helvetica Neue', sans-serif;
+    font-size: 7vw;
 }
 
 @media screen and (min-width: 768px) {
@@ -35,15 +37,16 @@ a.navLink {
     
     }
     .logo {
-        width: 30vw;
+        width: 25vw;
         height: auto;
     }
     .nav {
     
     }
     .navItem {
-    
+        
     }
     a.navLink {
+        font-size: 2vw;
     }
 }

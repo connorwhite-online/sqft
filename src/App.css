@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.disable-scroll {
+    overflow-y: hidden;
+}
+
 @media screen and (min-width: 768px) {
     .app {
         flex-direction: row;
