@@ -12,10 +12,12 @@ export default function Store() {
 
     const storeRef = useRef();
     const [product, setProduct] = useState(null);
+    const [checkout, setCheckout] = useState(null);
 
     const client = Client.buildClient({
         domain: 'sq-ft-2544.myshopify.com',
-        storefrontAccessToken: '227f073ed07ba7ab78417cda998543b1'
+        storefrontAccessToken: '227f073ed07ba7ab78417cda998543b1',
+        cors: false
     });
     
     // Fetch a single product by Handle
@@ -26,12 +28,27 @@ export default function Store() {
         setProduct(product);
     });
 
-    const handleAddToBag = () => {
+    useEffect(() => {
         client.checkout.create().then((checkout) => {
             // Do something with the checkout
+            setCheckout(checkout.webUrl)
             console.log(checkout);
         });
-    };
+
+        const checkoutId = client.checkout.id; // ID of an existing checkout
+        const lineItemsToAdd = [
+        {
+            handle: 'issue-01',
+            quantity: 1,
+        }
+        ];
+
+        // Add an item to the checkout
+        client.checkout.addLineItems(checkoutId, lineItemsToAdd).then((checkout) => {
+        // Do something with the updated checkout
+        console.log(checkout.lineItems); // Array with one additional line item
+        });
+    }, []);
 
     useEffect(() => {
         let ctx = gsap.context(() => {
@@ -94,7 +111,7 @@ export default function Store() {
                         {product.description}
                     </div>
                     <div className='productButton'>
-                        <button onClick={handleAddToBag}>Add to Bag</button>
+                        <a href={checkout}><button>Add to Bag</button></a>
                     </div>
                 </div>
             )}
